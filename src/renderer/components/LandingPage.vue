@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper">
     <h1 class="title">USTID Checker</h1>
-    <div class="notification is-warning" v-if="showError">
+    <div class="notification is-info" v-if="showError">
       <button class="delete" @click="showError = false"></button>
        <h2>{{ errorTitle }}</h2>
        {{errorMessage}}
@@ -88,27 +88,30 @@
           str: '',
         },
         loading: false,
-        lastResponse: {ErrorCode: '200'},
+        lastResponse: {},
         showError: false,      
       }
     },
     computed: {
+      errorCode () {
+        return parseInt(this.lastResponse.ErrorCode)
+      },
       errorTitle () {
-        return 'Fehlercode '+ this.lastResponse.ErrorCode
+        return 'Fehlercode '+ this.errorCode
       },
       errorMessage () {
         return errorCodes[parseInt(this.lastResponse.ErrorCode)]
       },
       ustid_check_classObject () {
         return {
-          'is-success': [200, 216, 218, 219].indexOf(parseInt(this.lastResponse.ErrorCode)) > -1, 
-          'is-danger': [201, 202, 203, 204, 209, 210, 212, ].indexOf(parseInt(this.lastResponse.ErrorCode)) > -1  
+          'is-success': [200, 216, 218, 219].indexOf(this.errorCode) > -1, 
+          'is-danger': [201, 202, 203, 204, 209, 210, 212 ].indexOf(this.errorCode) > -1  
         }
       },
       ustid_your_classObject () {
         return {
-          'is-success': [200, 216, 218, 219].indexOf(parseInt(this.lastResponse.ErrorCode)) > -1, 
-          'is-danger': [206,207,208,214].indexOf(parseInt(this.lastResponse.ErrorCode)) > -1  
+          'is-success': [200, 216, 218, 219].indexOf(this.errorCode) > -1, 
+          'is-danger': [206,207,208,214].indexOf(this.errorCode) > -1  
         }
       }
     },
@@ -256,19 +259,34 @@
   }
 
   .input {
-    border-width:2px;
+    border-width:0px;
+    border-color:#fff;
+    border-bottom:2px solid #aaa;
+    background-color:#eee;
   }
 
   .control .icon i{
-    color:#fff;
+    visibility: hidden;
   }
   .is-success + .icon i{
     color:#23d160;
+    visibility: visible;
+  }
+  .is-success {
+    color:#23d160;
   }
 
-  .notification {
+  .notification, .notification.is-primary, .notification.is-info {
+    background-color: rgba(0,209,178, 0.9);
+    background-color: rgba(50, 115, 220, 1);
+
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     z-index:999999999;
     font-weight:normal;
+    position:fixed;
+    left:0;
+    top:10vh;
+    margin:20px;
   }
 
 </style>

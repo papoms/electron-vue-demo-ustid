@@ -18,7 +18,7 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    width: 560,
+    width: 460,
     height: 700,
     useContentSize: true,
     title: 'USTID Checker',
