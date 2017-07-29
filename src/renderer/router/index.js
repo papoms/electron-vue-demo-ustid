@@ -7,8 +7,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage')
+      name: 'ustid-check',
+      component: require('@/components/UstidCheck')
     },
     {
       path: '*',
