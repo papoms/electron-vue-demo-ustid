@@ -4,6 +4,8 @@
 
 Check VAT Numbers against the official (german) API.
 
+![ustid-checker](https://user-images.githubusercontent.com/1764001/28747570-909612c6-74a2-11e7-97e0-5e26b0d6599e.png)
+
 #### Build Setup
 
 ``` bash
