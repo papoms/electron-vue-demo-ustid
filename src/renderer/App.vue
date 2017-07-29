@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'electron-testcase'
+    name: 'ustid-checker'
   }
 </script>
 

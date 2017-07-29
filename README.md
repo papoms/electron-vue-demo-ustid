@@ -1,4 +1,4 @@
-# electron-testcase
+# ustid-checker
 
 > An electron-vue project
 
