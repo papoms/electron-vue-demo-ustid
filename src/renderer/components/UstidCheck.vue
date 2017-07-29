@@ -48,7 +48,7 @@ export default {
     data () {
         return {
             formData: {
-                ownUstid: 'DE815358108',
+                ownUstid: 'DE127337884',
                 checkUstid: 'ATU69116734',
                 firma: 'Coinimal GmbH',
                 ort: 'Wien',
@@ -121,7 +121,7 @@ export default {
         The rest is optional but for an extended check you need to provide at least firma and ort
         Dont set druck to ja or the checking USTID will receive a snake mail letter per request. 
         */
-        query (ownUstid, checkUstid, firma = '', ort = '', plz = '', str = '', druck = 'ja') {
+        query (ownUstid, checkUstid, firma = '', ort = '', plz = '', str = '', druck = 'nein') {
             
             let url = `https://evatr.bff-online.de/evatrRPC?UstId_1=${encodeURIComponent(ownUstid)}&UstId_2=${encodeURIComponent(checkUstid)}&Firmenname=${encodeURIComponent(firma)}&Ort=${encodeURIComponent(ort)}&PLZ=${encodeURIComponent(plz)}&Strasse=${encodeURIComponent(str)}&Druck=${encodeURIComponent(druck)}`
 
