@@ -1,6 +1,8 @@
 # ustid-checker
 
-> An electron-vue project
+> A small electron-vue demo project
+
+Check VAT Numbers against the official (german) API.
 
 #### Build Setup
 
