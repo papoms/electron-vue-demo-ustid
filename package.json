@@ -17,8 +17,8 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "electron-testcase",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "ustid-checker",
+    "appId": "com.porzky.ustid-checker",
     "directories": {
       "output": "build"
     },
